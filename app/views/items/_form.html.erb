@@ -5,7 +5,7 @@
     <%= f.input :url, label: '原地址', placeholder: '请填写素材原始地址', input_html: { class: "form-control"} %>
     <%= f.input :usd, label: 'USD', placeholder: '20', input_html: { class: "form-control"} %>
     <%= f.input :rmb, label: 'RMB', placeholder: '120', input_html: { class: "form-control"} %>
-    <%= f.input :type, label: '类型', placeholder: '120', input_html: { class: "form-control"} %>
+    <%= f.radio_buttons :type, label: '类型', placeholder: '120', input_html: { class: "form-control"} %>
     <%= f.input :music_file, label: '选择音乐', as: :file %>
   </div>
   <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
