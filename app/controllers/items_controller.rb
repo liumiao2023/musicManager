@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    send_file(Rails.root.join('public', 'uploads', 'item', 'music_file', @item.title))
   end
 
   def edit
@@ -42,7 +43,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:title, :length, :url, :usd, :rmb, :type)
+    params.require(:item).permit(:title, :length, :url, :usd, :rmb, :type, [:music_file])
   end
 
 end
