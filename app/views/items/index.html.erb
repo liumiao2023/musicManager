@@ -1,35 +1,6 @@
 <div class="col-md-12">
-  <div class="group">
-    <%= link_to("上传素材", new_item_path, class: "btn btn-primary pull-right") %>
-  </div>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <td>音乐序号</td>
-        <td>音乐名称</td>
-        <td>长度</td>
-        <td>素材网址</td>
-        <td>美元价格</td>
-        <td>人民币价格</td>
-      </tr>
-    </thead>
-    <tbody>
-      <% @items.each do |item| %>
-        <tr>
-          <td><%= item.id %></td>
-          <td><%= item.title %></td>
-          <td><%= item.length %></td>
-          <td><%= item.url %></td>
-          <td><%= item.usd %></td>
-          <td><%= item.rmb %></td>
-          <td>
-              <%= link_to("下载", item_path(item), class: "btn btn-sm btn-default")%>
-              <%= link_to("编辑", edit_item_path(item), class: "btn btn-sm btn-default")%>
-              <%= link_to("删除", item_path(item),    class: "btn btn-sm btn-default",
-                          method: :delete, data: { confirm: "你真的要删除吗?" } )%>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+    <div class="group">
+        <%= link_to("上传素材", new_item_path, class: "btn btn-primary pull-right") %>
+    </div>
+    <%= render "index_list" %>
 </div>
