@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:title, :length, :url, :usd, :rmb, :music_type, [:music_file])
+    params.require(:item).permit(:title, :length, :url, :usd, :rmb, :music_type, :music_file)
   end
 
 end

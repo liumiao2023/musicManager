@@ -20,16 +20,21 @@
             <td><%= item.usd %></td>
             <td><%= item.rmb %></td>
             <td><% if item.music_type == true %>
-              音乐
+                音乐
             <% else %>
-              音效
-            <% end %>
+                音效
+                <% end %>
             </td>
             <td>
+              <audio controls>
+                  <source src= "<%= item.music_file %>" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
                 <%= link_to("下载", item_path(item), class: "btn btn-sm btn-default")%>
                 <%= link_to("编辑", edit_item_path(item), class: "btn btn-sm btn-default")%>
                 <%= link_to("删除", item_path(item),    class: "btn btn-sm btn-default",
                       method: :delete, data: { confirm: "你真的要删除吗?" } )%>
+
             </td>
         </tr>
         <% end %>
