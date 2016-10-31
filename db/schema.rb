@@ -10,6 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20161024105014) do
+
+  create_table "items", force: :cascade do |t|
+    t.string   "title"
+    t.string   "length"
+    t.string   "url"
+    t.float    "usd"
+    t.float    "rmb"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "music_file"
+    t.boolean  "music_type"
+    t.string   "category"
+  end
+
+  create_table "music_file_types", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "category"
+  end
 
 end
