@@ -26,15 +26,13 @@
                 <% end %>
             </td>
             <td>
-              <audio controls>
-                  <source src= "<%= item.music_file %>" type="audio/wav">
-                  Your browser does not support the audio element.
-              </audio>
+                <audio controls>
+                    <source src="<%= item.music_file %>" type="audio/wav">
+                </audio>
                 <%= link_to("下载", item_path(item), class: "btn btn-sm btn-default")%>
                 <%= link_to("编辑", edit_item_path(item), class: "btn btn-sm btn-default")%>
                 <%= link_to("删除", item_path(item),    class: "btn btn-sm btn-default",
                       method: :delete, data: { confirm: "你真的要删除吗?" } )%>
-
             </td>
         </tr>
         <% end %>
